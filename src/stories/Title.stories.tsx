@@ -4,7 +4,7 @@ import {Platform, PlatformContext} from "../components/PlatformContext/PlatformC
 import {ComponentProps} from "react";
 
 const meta = {
-    title: 'Example/Title',
+    title: 'Typography/Title',
     component: Title,
     decorators: [
         (Story, { args }) => (

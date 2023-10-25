@@ -5,7 +5,7 @@ import {ComponentProps} from "react";
 import Button from "../components/Button/Button";
 
 const meta = {
-    title: 'Example/Headline',
+    title: 'Typography/Headline',
     component: Headline,
     decorators: [
         (Story, { args }) => (

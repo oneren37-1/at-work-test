@@ -4,7 +4,7 @@ import {ComponentProps} from "react";
 import Category from "../components/Category/Category";
 
 const meta = {
-    title: 'Example/Category',
+    title: 'Category',
     component: Category,
     decorators: [
         (Story, { args }) => (

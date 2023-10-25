@@ -5,7 +5,7 @@ import {ComponentProps} from "react";
 import Headline from "../components/Typography/Headline/Headline";
 
 const meta = {
-    title: 'Example/Text',
+    title: 'Typography/Text',
     component: Text,
     decorators: [
         (Story, { args }) => (

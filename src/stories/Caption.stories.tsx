@@ -4,7 +4,7 @@ import {ComponentProps} from "react";
 import Caption from "../components/Typography/Caption/Caption";
 
 const meta = {
-    title: 'Example/Caption',
+    title: 'Typography/Caption',
     component: Caption,
     decorators: [
         (Story, { args }) => (
