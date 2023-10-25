@@ -1,0 +1,35 @@
+.input {
+  border-radius: 50px;
+  border: 2px solid var(--color-grey-04);
+  padding: 10px 16px;
+  outline: none;
+
+  color: var(--color-grey-01);
+  font-size: 16px;
+  font-weight: 500;
+
+  &:focus+.clear {
+    display: block;
+  }
+
+  &.mobile {
+    font-size: 14px;
+  }
+}
+
+.inputWrapper {
+  position: relative;
+}
+
+.clear {
+  display: none;
+
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+
+  width: 24px;
+  height: 24px;
+}

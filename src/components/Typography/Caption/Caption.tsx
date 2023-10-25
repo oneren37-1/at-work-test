@@ -3,7 +3,7 @@ import classNames from "classnames";
 import style from "./Caption.module.scss";
 import {usePlatform} from "../../../app/hooks";
 
-export interface ICaptionProps {
+export interface ICaptionProps extends React.HTMLAttributes<HTMLParagraphElement> {
     text: string
 }
 
@@ -16,6 +16,7 @@ const Caption = (props: ICaptionProps) => {
                 style.caption,
                 { [style.mobile]: platform == 'mobile' }
             )}
+            {...props}
         >{ props.text }</p>
     )
 }
