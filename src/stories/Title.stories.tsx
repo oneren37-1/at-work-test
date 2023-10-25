@@ -18,7 +18,7 @@ const meta = {
     },
     tags: ['autodocs'],
     argTypes: {
-        text: { control: 'text' },
+        children: { control: 'text' },
         platformContextValue: { control: 'inline-radio', options: ['desktop', 'mobile'] },
     },
 } satisfies Meta<ComponentProps<typeof Title> & { platformContextValue: Platform }>;
@@ -28,7 +28,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Main: Story = {
     args: {
-        text: 'Заголовок',
+        children: 'Заголовок',
         platformContextValue: 'desktop',
     },
 };

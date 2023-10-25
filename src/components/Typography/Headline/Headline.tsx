@@ -2,21 +2,19 @@ import React from 'react';
 import style from './Headline.module.scss';
 import classNames from "classnames";
 import {usePlatform} from "../../../app/hooks";
-export interface IHeadlineProps extends React.HTMLAttributes<HTMLHeadingElement> {
-    text: string;
-}
 
-const Headline = (props: IHeadlineProps) => {
+const Headline = (props: React.HTMLAttributes<HTMLHeadingElement>) => {
     const platform = usePlatform()
 
     return (
         <h2
+            {...props}
             className={classNames(
+                props.className,
                 style.headline,
                 { [style.mobile]: platform == 'mobile' }
             )}
-            {...props}
-        >{ props.text }</h2>
+        >{ props.children }</h2>
     )
 }
 

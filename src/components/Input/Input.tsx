@@ -15,7 +15,7 @@ const Input = (props: IInputProps) => {
     return (
         <div>
             {props.label && (
-                <Text text={ props.label } weight={'semi-bold'} style={{ marginBottom: "10px" }}/>
+                <Text weight={'semi-bold'} style={{ marginBottom: "10px" }}>{ props.label }</Text>
             )}
             <div className={styles.inputWrapper}>
                 <input className={classNames(

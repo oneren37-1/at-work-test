@@ -1,16 +1,16 @@
 import React from 'react'
 import style from './Title.module.scss'
+import classNames from "classnames";
 
-export interface ITitleProps extends React.HTMLAttributes<HTMLHeadingElement>{
-    text: string;
-}
-
-const Title = (props: ITitleProps) => {
+const Title = (props: React.HTMLAttributes<HTMLHeadingElement>) => {
     return (
         <h1
-            className={style.title}
             {...props}
-        >{ props.text }</h1>
+            className={classNames(
+                props.className,
+                style.title
+            )}
+        >{ props.children }</h1>
     )
 }
 
