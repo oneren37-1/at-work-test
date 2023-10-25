@@ -1,0 +1,21 @@
+.button {
+  background: var(--color-grey-01);
+  border: none;
+  border-radius: 50px;
+  padding: 12px 42px;
+
+  color: var(--color-grey-06);
+  text-align: center;
+
+  font-size: 16px;
+  font-weight: 600;
+
+  &:hover {
+    background: var(--color-grey-05);
+    color: var(--color-grey-02);
+  }
+}
+
+.mobile {
+  font-size: 14px;
+}
