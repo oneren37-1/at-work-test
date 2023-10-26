@@ -1,9 +1,10 @@
 .icon {
   color: var(--color-grey-01);
-  font-size: 24px;
+  font-size: 16px;
+  cursor: pointer;
 
   &.mobile {
-    font-size: 16px;
+    font-size: 12px;
   }
 
   &:hover {
