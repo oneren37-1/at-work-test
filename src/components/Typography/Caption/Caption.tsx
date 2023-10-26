@@ -12,7 +12,7 @@ const Caption = (props: React.HTMLAttributes<HTMLSpanElement>) => {
             className={classNames(
                 props.className,
                 style.caption,
-                { [style.mobile]: platform == 'mobile' }
+                { [style.mobile]: platform === 'mobile' }
             )}
         >{ props.children }</span>
     )

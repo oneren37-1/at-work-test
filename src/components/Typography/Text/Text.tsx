@@ -17,9 +17,9 @@ const Text = (props: ITextProps) => {
             className={ classNames(
                 props.className,
                 style.text,
-                props.size == 'large' ? style.large : style.medium,
-                props.weight == 'semi-bold' ? style["semi-bold"] : style.regular,
-                { [style.mobile]: platform == 'mobile' }
+                props.size === 'large' ? style.large : style.medium,
+                props.weight === 'semi-bold' ? style["semi-bold"] : style.regular,
+                { [style.mobile]: platform === 'mobile' }
             )}
         >{ props.children }</span>
     )

@@ -1,0 +1,16 @@
+.icon {
+  color: var(--color-grey-01);
+  font-size: 24px;
+
+  &.mobile {
+    font-size: 16px;
+  }
+
+  &:hover {
+    color: var(--color-accent);
+  }
+
+  &:active {
+    color: var(--color-grey-02);
+  }
+}

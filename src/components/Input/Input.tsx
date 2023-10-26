@@ -1,9 +1,10 @@
-import React from "react";
+import React, {ChangeEvent, useState} from "react";
 import Text from "../Typography/Text/Text";
 import styles from './Input.module.scss';
-import clear from './clear.svg'
 import classNames from "classnames";
 import {usePlatform} from "../../app/hooks";
+import {faXmark} from "@fortawesome/free-solid-svg-icons";
+import Icon from "../Icon/Icon";
 
 interface IInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
     label?: string;
@@ -11,6 +12,21 @@ interface IInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
 
 const Input = (props: IInputProps) => {
     const platform = usePlatform();
+
+    const [value, setValue] = useState(props.value)
+    const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
+        const newValue = e.target.value;
+        setValue(newValue);
+
+        const fakeEvent = {
+            target: { value: newValue },
+        } as ChangeEvent<HTMLInputElement>;
+        props.onChange && props.onChange(fakeEvent);
+    };
+
+    const handleClearClick = () => {
+        handleInputChange({ target: { value: '' } } as ChangeEvent<HTMLInputElement>);
+    };
 
     return (
         <div>
@@ -20,9 +36,12 @@ const Input = (props: IInputProps) => {
             <div className={styles.inputWrapper}>
                 <input className={classNames(
                     styles.input,
-                    { [styles.mobile]: platform == 'mobile' }
-                )} { ...props }/>
-                <div className={styles.clear}><img src={clear}  alt={'clear'}/></div>
+                    { [styles.mobile]: platform === 'mobile' }
+                )} { ...props } value={value} onChange={handleInputChange}/>
+                <div
+                    className={styles.clear}
+                    onClick={handleClearClick}
+                ><Icon i={faXmark} size={16}/></div>
             </div>
         </div>
     )

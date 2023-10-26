@@ -12,7 +12,7 @@ const Headline = (props: React.HTMLAttributes<HTMLHeadingElement>) => {
             className={classNames(
                 props.className,
                 style.headline,
-                { [style.mobile]: platform == 'mobile' }
+                { [style.mobile]: platform === 'mobile' }
             )}
         >{ props.children }</h2>
     )
