@@ -14,3 +14,8 @@ body {
   --color-grey-01: #161616;
   --color-accent: #22a0bc;
 }
+
+.container {
+  width: 90%;
+  max-width: 1160px;
+}
