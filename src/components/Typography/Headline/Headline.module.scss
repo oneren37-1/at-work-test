@@ -1,6 +1,8 @@
 .headline {
   font-size: 20px;
   font-weight: 600;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .mobile {

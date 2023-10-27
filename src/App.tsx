@@ -1,17 +1,15 @@
-import React, {useEffect} from 'react';
-import {usePlatform} from "./app/hooks";
+import React from 'react';
+import {BrowserRouter, Route, Routes} from "react-router-dom";
+import Home from "./pages/Home/Home";
+import './index.css'
 
 function App() {
-    const platform = usePlatform();
-
-    useEffect(() => {
-        console.log(platform)
-    }, [platform])
-
   return (
-    <div className="App">
-      Hello world
-    </div>
+      <BrowserRouter>
+          <Routes>
+              <Route path="/" element={<Home />} />
+          </Routes>
+      </BrowserRouter>
   );
 }
 

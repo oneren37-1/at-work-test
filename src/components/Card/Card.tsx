@@ -22,7 +22,7 @@ const Card = (props: ICardProps) => {
     return (
         <div className={classNames(
             style.card,
-            { [style.mobile]: platform === 'mobile' },
+            { [style.mobile]: ['mobile', 'pad'].includes(platform) },
             { [style.disabled]: props.disabled }
         )}>
             <img className={style.avatar} src={props.avatar} alt={props.username} />

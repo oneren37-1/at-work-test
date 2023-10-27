@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import {Platform, PlatformContext} from "../components/PlatformContext/PlatformContext";
 import {ComponentProps} from "react";
 import Category from "../components/Category/Category";
+import Title from "../components/Typography/Title/Title";
 
 const meta = {
     title: 'Category',
@@ -20,7 +21,6 @@ const meta = {
     },
     tags: ['autodocs'],
     argTypes: {
-        name: { control: 'text' },
         platformContextValue: { control: 'inline-radio', options: ['desktop', 'mobile'] },
     },
 } satisfies Meta< ComponentProps<typeof Category> & { platformContextValue: Platform }>;
@@ -30,14 +30,14 @@ type Story = StoryObj<typeof meta>;
 
 export const Desktop: Story = {
     args: {
-        name: 'Name',
+        children: (<Title>Категория</Title>),
         platformContextValue: 'desktop',
     },
 };
 
 export const Mobile: Story = {
     args: {
-        name: 'Name',
+        children: (<Title>Категория</Title>),
         platformContextValue: 'mobile',
     },
 };

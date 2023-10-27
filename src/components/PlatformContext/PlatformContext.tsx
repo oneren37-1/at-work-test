@@ -1,6 +1,6 @@
 import React, {createContext, useEffect, useState} from 'react'
 
-export type Platform = 'mobile' | 'desktop';
+export type Platform = 'mobile' | 'pad' | 'desktop';
 
 export const PlatformContext = createContext<Platform>('desktop');
 
@@ -9,11 +9,13 @@ export interface PlatformProviderProps {
 }
 
 const PlatformProvider = ({ children }: PlatformProviderProps) => {
-    const [platform, setPlatform] = useState<Platform>('desktop');
+    const [platform, setPlatform] = useState<Platform>(window.innerWidth < 768 ? 'mobile' : 'desktop');
 
     useEffect(() => {
         const checkWidth = () => {
-            const newPlatform = window.innerWidth < 768 ? 'mobile' : 'desktop';
+            const newPlatform = window.innerWidth < 768 ? 'mobile' : (
+                window.innerWidth < 1300 ? 'pad' : 'desktop'
+            );
             if (newPlatform !== platform) {
                 setPlatform(newPlatform);
             }
