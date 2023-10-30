@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/static/css/main.9ef04755.css",
-    "main.js": "/static/js/main.0f1adacd.js",
-    "static/media/logo.svg": "/static/media/logo.861f33d6692bb25cf0b9f00e5bac5852.svg",
-    "index.html": "/index.html",
-    "static/media/icon.svg": "/static/media/icon.45164bf8a7301a5643d3d8c06b580539.svg",
-    "main.9ef04755.css.map": "/static/css/main.9ef04755.css.map",
-    "main.0f1adacd.js.map": "/static/js/main.0f1adacd.js.map"
+    "main.css": "https://oneren37-1.github.io/at-work-test/static/css/main.9ef04755.css",
+    "main.js": "https://oneren37-1.github.io/at-work-test/static/js/main.db95524b.js",
+    "static/media/logo.svg": "https://oneren37-1.github.io/at-work-test/static/media/logo.861f33d6692bb25cf0b9f00e5bac5852.svg",
+    "index.html": "https://oneren37-1.github.io/at-work-test/index.html",
+    "static/media/icon.svg": "https://oneren37-1.github.io/at-work-test/static/media/icon.45164bf8a7301a5643d3d8c06b580539.svg",
+    "main.9ef04755.css.map": "https://oneren37-1.github.io/at-work-test/static/css/main.9ef04755.css.map",
+    "main.db95524b.js.map": "https://oneren37-1.github.io/at-work-test/static/js/main.db95524b.js.map"
   },
   "entrypoints": [
     "static/css/main.9ef04755.css",
-    "static/js/main.0f1adacd.js"
+    "static/js/main.db95524b.js"
   ]
 }
