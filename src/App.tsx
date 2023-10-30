@@ -6,7 +6,7 @@ import Edit, {Privacy, Security, UserData, Workspace} from './pages/Edit/Edit';
 
 function App() {
   return (
-      <BrowserRouter>
+      <BrowserRouter basename={"/at-work-test"}>
           <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/edit" element={<Edit />}>

