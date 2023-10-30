@@ -3,16 +3,17 @@
   margin-top: 40px;
 }
 
-.grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 32px 40px
+.gridRow {
+  display: flex;
+  gap: 40px;
+  &:not(:last-child) {
+    margin-bottom: 32px;
+  }
 }
 
-
-@media only screen and (max-width: 850px) {
-  .grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px 20px
+.gridMobile .gridRow {
+  gap: 20px;
+  &:not(:last-child) {
+    margin-bottom: 20px;
   }
 }

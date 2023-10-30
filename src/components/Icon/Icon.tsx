@@ -8,6 +8,7 @@ import {usePlatform} from "../../app/hooks";
 export interface IIconProps {
     i: IconDefinition
     size?: number
+    onClick?: () => void
 }
 
 const Icon = (props: IIconProps) => {
@@ -15,6 +16,7 @@ const Icon = (props: IIconProps) => {
 
     return (
         <FontAwesomeIcon
+            onClick={props.onClick}
             className={classNames(
                 styles.icon,
                 { [styles.mobile]: platform === 'mobile' }

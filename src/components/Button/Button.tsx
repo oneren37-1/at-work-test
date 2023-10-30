@@ -3,23 +3,20 @@ import style from './Button.module.scss'
 import {usePlatform} from "../../app/hooks";
 import classNames from "classnames";
 
-export interface ButtonProps {
-    onClick?: () => void;
-    text: string;
-}
-
-const Button = (props: ButtonProps) => {
+const Button = (props: React.ButtonHTMLAttributes<HTMLButtonElement>) => {
     const platform = usePlatform();
 
     return (
         <button
+            {...props}
             className={
                 classNames(
+                    props.className,
                     style.button,
                     {[style.mobile]: platform === 'mobile'}
                 )
             }
-        >{props.text}</button>
+        >{props.children}</button>
     )
 }
 

@@ -1,11 +1,14 @@
 import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
 
 export type User = {
-    id: number,
+    id: string,
+    name: string
     username: string,
     avatar: string,
+    email: string,
     city: string,
     company: string,
+    phone: string,
     status: 'active' | 'archive' | 'hidden'
 }
 
@@ -23,7 +26,29 @@ const initialState: UsersState = {
 export const usersSlice = createSlice({
     name: 'users',
     initialState,
-    reducers: {},
+    reducers: {
+        changeUserStatus: (state, action) => {
+            state.users?.map(el => {
+                if (el.id === action.payload.id) {
+                    el.status = action.payload.status
+                }
+                return el
+            })
+        },
+        updatePersonalInfo: (state, action) => {
+            state.users?.map(el => {
+                if (el.id === action.payload.id) {
+                    el.name = action.payload.name
+                    el.username = action.payload.username
+                    el.email = action.payload.email
+                    el.city = action.payload.city
+                    el.phone = action.payload.phone
+                    el.company = action.payload.company
+                }
+                return el
+            })
+        }
+    },
     extraReducers: (builder) => {
         builder.addCase(fetchUsers.pending, (state, action) => {
             state.status = 'loading'
@@ -47,14 +72,20 @@ export const fetchUsers = createAsyncThunk(
             .then(response => response.json())
             .then(data => data.map((row: any) => {
                 return {
-                    id: row.id,
+                    id: row.id.toString(),
+                    name: row.name,
                     username: row.username,
+                    email: row.email,
                     avatar: "https://thispersondoesnotexist.com/",
                     city: row.address.city,
                     company: row.company.name,
+                    phone: row.phone,
                     status: 'active'
                 }
             }).slice(0, 6))
     }
 )
+
+export const { changeUserStatus, updatePersonalInfo } = usersSlice.actions;
+
 export default usersSlice.reducer;
